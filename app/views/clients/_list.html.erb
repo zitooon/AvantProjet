@@ -1,0 +1,19 @@
+<table>
+  		<tr>
+    		<th>Name</th>
+   			<th>Comment</th>
+  			<th>Actions</th>
+  		</tr>
+		<% for client in @clients %>
+			<% if client.name != '' and client.category.name == @cat %>
+  				<tr>
+    				<td width="300px"><%=h client.name %></td>
+    				<td width="300px"><%=h client.comment %></td>
+    				<td><%= link_to 'Show', client %>&nbsp;&nbsp;
+    				<%= link_to 'Edit', edit_client_path(client) %>&nbsp;&nbsp;
+    				<%= link_to 'Destroy', client, :confirm => 'Are you sure?', :method => :delete %></td>
+  				</tr>
+ 			<%end%>
+		<% end %>
+	</table>
+	<hr/>

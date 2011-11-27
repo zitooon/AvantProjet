@@ -1,0 +1,20 @@
+<% nb_clients = (Client.count(:all))/2-2 %>
+<div id="villes-left-container">
+	<h1>villes</h1>
+	<% nb = 0 %>
+	<% for client in @clients %>
+		<% nb += 1 %>
+		<% if client.name != '' and client.category.name == "villes" %>
+ 			<div class="liste-clients"><%=h client.name %></div><% if client.comment != '' %>&nbsp;(<%=h client.comment %>)<%end%><br/>
+		<%end%>
+		<% if nb_clients == nb %>
+			</div>
+			<div id="villes-middle-container">
+				<br/><br/><br/>
+		<% end %>
+	<% end %>
+</div>
+<div id="villes-right-container">
+	<br/>
+	<%= image_tag('france.gif', :border => 0) %>	
+</div>

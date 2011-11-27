@@ -1,0 +1,17 @@
+<p>
+  <b>Name:</b>
+  <%=h @client.name %>
+</p>
+
+<p>
+  <b>Comment:</b>
+  <%=h @client.comment %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%=h @client.category.name %>
+</p>
+
+<%= link_to 'Edit', edit_client_path(@client) %> |
+<%= link_to 'Back', clients_path %>

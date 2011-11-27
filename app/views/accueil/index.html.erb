@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>avantprojet - <%= controller.controller_name %></title>
+  <%= stylesheet_link_tag 'main' %>
+  <%= javascript_include_tag :defaults %>
+</head>
+<body>
+	<div id="container">
+		<div id="welcome-logo"><%= image_tag('logo.gif', :border => 0)%></div>
+		<div id="welcome-address">9 rue des Ursulines&nbsp;&nbsp;75005&nbsp;&nbsp;PARIS&nbsp;&nbsp;&nbsp;&nbsp;t&eacute;l 01 56 24 11 39&nbsp;&nbsp;&nbsp;&nbsp;fax 01 56 24 11 40&nbsp;&nbsp;&nbsp;&nbsp;avant.projet@wanadoo.fr</div>
+		<div id="welcome-links">
+			<div><%= link_to '', {:controller => 'agence'}, :id => 'welcomelink_agence' %></div>
+			<div><%= link_to '', {:controller => 'equipe'}, :id => 'welcomelink_equipe' %></div>
+			<div><%= link_to '', {:controller => 'references'}, :id => 'welcomelink_references' %></div>
+			<div><%= link_to '', {:controller => 'clients'}, :id => 'welcomelink_clients' %></div>
+			<div><%= link_to '', {:controller => 'publications'}, :id => 'welcomelink_publications' %></div>	
+		</div>
+		<div id="welcome-acad"><%= image_tag('acad.gif', :border => 0)%></div>
+	</div>
+</body>
+</html>

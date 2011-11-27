@@ -1,0 +1,16 @@
+<div class="content-left-container">
+	<h1>groupements de communes</h1>
+	<% for client in @clients %>
+		<% if client.name != '' and client.category.name == "groupements de communes" %>
+ 				<div class="liste-clients"><%=h client.name %></div><% if client.comment != '' %>&nbsp;(<%=h client.comment %>)<%end%><br/>
+		<%end%>
+	<% end %>
+</div>
+<div class="content-right-container">
+	<h1>services de l'Etat et <br/></>établissements publics</h1>
+	<% for client in @clients %>
+		<% if client.name != '' and client.category.name == "services de l’Etat et établissements publics" %>
+ 				<div class="liste-clients"><%=h client.name %></div><% if client.comment != '' %>&nbsp;(<%=h client.comment %>)<%end%><br/>
+		<%end%>
+	<% end %>
+</div>

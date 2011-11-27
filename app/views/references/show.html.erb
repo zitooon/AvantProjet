@@ -1,0 +1,57 @@
+ <table>
+  	<tr>
+  		<td>
+ 			 <b>Date:</b>
+ 			 <%=h @reference.date %>
+  		</td>
+		<td>
+ 			  <b>Client:</b>
+ 			  <%=h @reference.client.name %>
+  		</td>
+	</tr>
+	<tr><td></td></tr>
+	<tr>
+   		<td colspan="2">
+			  <b>Title:</b>
+ 			 <%=h @reference.title %>
+ 		</td>
+	</tr>
+	<tr><td></td></tr>
+	<tr>
+   		<td colspan="2" width="600px">
+			  <b>Comment:</b>
+	  		<%= simple_format(@reference.comment) %>
+		</td>
+	</tr>
+	<tr><td></td></tr>
+	<tr>
+   		<td>
+		   <b>Owner:</b>
+		  <%=h @reference.owner %>
+		</td>
+		<td>
+			 <b>little comment:</b>
+			  <%=h @reference.little_comment %>
+		</td>
+	</tr>
+	<tr><td></td></tr>
+	<tr>
+   		<td colspan=2>
+	 	 <b>Summary:</b>
+		 <table>
+			<tr>
+				<% if @reference.summary.nil? == false %>
+					<td><%= link_to image_tag('download_icon.gif', :border => 0), "/"+@reference.summary %></td><td><%= link_to @reference.summary.split("/").last.downcase, "/"+@reference.summary %></td>
+				<%else%>
+					<td>None</td>
+				<%end%>
+			</tr>
+		</table>
+  		</td>
+	</tr>
+	<tr><td></td></tr>
+</table>
+
+
+<%= link_to 'Edit', edit_reference_path(@reference) %> |
+<%= link_to 'Back', references_path %>

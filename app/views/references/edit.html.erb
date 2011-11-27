@@ -1,0 +1,60 @@
+<h1>Editing reference</h1>
+
+<%= error_messages_for :reference %>
+
+<% form_for(@reference , :html => {:multipart => true}) do |f| %>
+  <table>
+  	<tr>
+  		<td>
+    		<b>Date</b> *<br />
+    		<%= f.text_field :date %>
+  		</td>
+		<td>
+ 		   <b>Client</b><br />
+ 		   <%= f.select :client_id, @clients.collect { |p| [p.name, p.id] } %>
+  		</td>
+	</tr>
+	<tr>
+   		<td colspan="2">
+   			<b>Title</b> *<br />
+  		<%= f.text_area :title, :style => "width:620px;height:60px" %>
+  	 		</td>
+	</tr>
+	<tr>
+   		<td colspan="2">
+		    <b>Comment</b><br />
+		    <%= f.text_area :comment, :style => "width:620px;height:120px" %>
+  		</td>
+	</tr>
+	<tr>
+   		<td>
+    		<b>Owner</b> *<br />
+  			<%= f.text_field :owner, :style => "width:300px"  %>
+		</td>
+		<td>
+		    <b>little comment</b><br />
+		    <%= f.text_field :little_comment %>
+ 		</td>
+	</tr>
+	<tr>
+   		<td colspan=2>
+		    <b>Summary</b><br/>
+			<table>
+				<tr>
+					<% if @reference.summary.nil? == false %>
+						<td><%= link_to image_tag('download_icon.gif', :border => 0), @reference.summary %></td><td><%= link_to @reference.summary.split("/").last.downcase, @reference.summary %>&nbsp;&nbsp;-&nbsp;</td>
+					<%end%>
+		   			<td><%= file_field_tag :file %></td>
+				</tr>
+			</table>
+  		</td>
+	</tr>
+</table>
+
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @reference %> |
+<%= link_to 'Back', references_path %>

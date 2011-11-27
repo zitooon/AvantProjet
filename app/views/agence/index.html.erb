@@ -1,0 +1,54 @@
+<div id="agence-pictures"></div>
+<div id="agence-text" style="display:none;">
+	<div class="content-left-container">
+		<div id="agence-address">
+			9 rue des Ursulines - 75005 - PARIS<br/>
+			tél 01 56 24 11 39<br/>
+			fax 01 56 24 11 40<br/>
+			courriel : avant.projet@wanadoo.fr
+		</div>
+		<br/><br/><br/>
+		<div class="text">
+			Bureau d’études en urbanisme créé en février 1990, nous intervenons
+			dans l’élaboration de projets urbains, l’ingénierie	foncière, la 
+			programmation urbaine, l’assistance à la maîtrise d’ouvrage.<br/>
+			Nous réunissons des compétences en aménagement et paysage,
+			architecture et programmation, sociologie urbaine et concertation,
+			droit de l’urbanisme et montage d’opérations.<br/><br/>
+			Nous intervenons auprès de maîtres d’ouvrages publics et privés
+			pour la définition, la mise en place et le suivi de projets urbains.<br/><br/>
+			Nous travaillons en partenariat régulier avec différents ateliers
+			d’architecture et d’urbanisme, de paysage, écologue, BET infrastructures, 
+			etc. nous permettant de compléter, autant que nécessaire, nos compétences 
+			internes pour des études complexes.
+		</div>
+	</div>
+	<div class="content-right-container">
+		<div id="agence-assets">
+			<div id="agence-list-assets">
+				<%= image_tag('list_icon.gif', :border => 0) %>Une équipe de taille réduite et très stable<br/>pour des études "sur mesure"<br/>
+				<%= image_tag('list_icon.gif', :border => 0) %>Un fort investissement personnel<br/>des membres de l’équipe<br/>
+				<%= image_tag('list_icon.gif', :border => 0) %>Une approche pragmatique et enthousiaste<br/>des questions urbaines<br/>
+				<%= image_tag('list_icon.gif', :border => 0) %>Une exigence de clarté et de pédagogie
+			</div>
+		</div>
+		<div>
+			<h2 style="margin-left:25px;">sa structure</h2>
+			sarl au capital de 7622 € composée de 4 associés.<br/>
+			assurances professionnelles: Compagnie MAAF Assurances<br/>
+			cabinet d’expertise comptable: In Extenso groupe Deloitte<br/>
+			Banque: BICS, 64 rue Monge - 75005 - Paris.<br/>
+			Membre fondateur de l’ACAD (association des consultants en
+			aménagement et développement des territoires).
+			<h2 style="margin-left:25px;">son encadrement</h2>
+			<b>Christophe BASTIDE</b><br/>
+			économiste - urbaniste - programmiste (gérant et associé)<br/>
+			<b>Dominique DURAND</b><br/>
+			urbaniste - architecte DPLG - sociologue (associée)<br/>
+			<b>Alexandra ESPINOSA</b><br/>
+			urbaniste - architecte DPLG - juriste (associée)
+		</div>
+	</div>
+</div>
+<div id="page-agence-pictures" class="page-agence"><%= link_to_function 'Page 2', 'document.getElementById("agence-pictures").style.display="none";Effect.Appear("agence-text");Effect.Fade("page-agence-pictures");Effect.Appear("page-agence-text");', :class => 'link-page-agence' %></div>
+<div id="page-agence-text" class="page-agence" style="display:none;"><%= link_to_function 'Page 1', 'document.getElementById("agence-text").style.display="none";Effect.Appear("agence-pictures");Effect.Fade("page-agence-text");Effect.Appear("page-agence-pictures");', :class => 'link-page-agence' %></div>

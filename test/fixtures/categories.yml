@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+villes:
+  id: 1
+  name: villes
+
+groupements:
+  id: 2
+  name: groupements de communes
+
+services:
+  id: 3
+  name: services de l’Etat et établissements publics
+
+hlm:
+  id: 4
+  name: organismes HLM
+
+promoteurs:
+  id: 5
+  name: promoteurs privés

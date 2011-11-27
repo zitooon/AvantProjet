@@ -1,0 +1,15 @@
+<h1>Listing references</h1>
+<hr/>
+<% date = '' %>
+<% for reference in @references %>
+	<% if @date != reference.date %>
+	  	<% @date = reference.date %>
+		<div id="<%= reference.date %>" style="background-color:#bbbbbb;"><%= link_to_function '+ '+reference.date, 'Effect.SlideDown("liste'+reference.date+'");Effect.SlideUp("'+reference.date+'")' %></div>
+  		<div id="liste<%= reference.date %>" style="display:none;">
+  			<p style="background-color:#dddddd;"><%= link_to_function '- '+reference.date, 'Effect.SlideUp("liste'+reference.date+'");Effect.SlideDown("'+reference.date+'")' %></p>
+			<%= render :partial => "list" %>
+		</div>
+	<% end %>
+<%end%>
+<br/>
+<%= link_to 'New reference', new_reference_path %>

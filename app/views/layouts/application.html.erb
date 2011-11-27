@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>avantprojet - <%= controller.controller_name %></title>
+  <%= stylesheet_link_tag 'main' %>
+  <%= javascript_include_tag :defaults %>
+</head>
+<body>
+	<div id="container">
+		<div id="left-container">
+			<%= render :partial => "layouts/title" %>
+		</div>
+		<div id="menu-container">
+			<%= render :partial => "layouts/menu" %>
+		</div>
+		<div id="content-container">
+			<div id="content">
+				<% if flash[:notice]%>
+					<%= render :partial => "layouts/notice" %>
+				<%end%>
+				<%= yield  %>
+			</div>
+			<div id="download-summary">
+				<% if controller.controller_name == "references" %>
+					<%= image_tag('download_icon_small.gif', :border => 0) %><small>T&eacute;l&eacute;charger le r&eacute;sum&eacute;</small>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

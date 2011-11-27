@@ -1,0 +1,16 @@
+<div class="content-left-container">
+	<h1>organismes HLM</h1>
+	<% for client in @clients %>
+		<% if client.name != '' and client.category.name == "organismes HLM" %>
+ 				<div class="liste-clients"><%=h client.name %></div><% if client.comment != '' %>&nbsp;(<%=h client.comment %>)<%end%><br/>
+		<%end%>
+	<% end %>
+</div>
+<div class="content-right-container">
+	<h1>promoteurs privés</h1>
+	<% for client in @clients %>
+		<% if client.name != '' and client.category.name == "promoteurs privés" %>
+	 			<div class="liste-clients"><%=h client.name %></div><% if client.comment != '' %>&nbsp;(<%=h client.comment %>)<%end%><br/>
+		<%end%>
+	<% end %>
+</div>

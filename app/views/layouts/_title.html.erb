@@ -1,0 +1,10 @@
+<% if session[:admin] %>
+	<h1></>WEBMIN</h1>
+	<%= link_to 'Tools index', {:controller => 'admin'}, :method => :post %>
+	<br/>
+	<%= link_to 'Logout', {:controller => 'admin', :action => 'logout'}, :method => :post %>
+<% elsif controller.controller_name == "admin" %>
+	<h1>WEBMIN</h1>
+<%else%>
+	<%= image_tag(controller.controller_name+'.gif')%>
+<%end%>

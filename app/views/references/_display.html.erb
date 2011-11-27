@@ -1,0 +1,28 @@
+<% nb_references = (Reference.count(:all, :conditions => ["date = ?", @date]))/2+(Reference.count(:all, :conditions => ["date = ?", @date]))%2 %>
+<% nb = 0 %>
+<div class="content-left-container">
+	<h1><%=h @date %></h1>
+<% for reference in @references %>
+	<% if @date == reference.date %>
+    <% nb += 1 %>
+		<div class="reference">
+	    	<div class="title3">
+				<% if reference.summary.nil? == false %>
+					<%= link_to image_tag('download_icon_small.gif', :border => 0), reference.summary %><%= link_to reference.title, reference.summary %>
+				<% else %>
+					<%= image_tag('list_icon.gif', :border => 0) %><%= reference.title %>
+				<% end %>			
+			</div>
+  			<div class="reference-comment"><%= simple_format(reference.comment) %></div>
+   		 	<div class="reference-owner"><small>Ma&icirc;tre d'ouvrage:</small> <%=h reference.owner %></div>
+   		 	<div class="reference-littlecomment"><small>&nbsp;<%=h reference.little_comment %></small></div>
+	    </div>
+	<% if nb_references == nb %>
+		</div>
+		<div class="content-right-container">
+				<br/><br/>
+		<% end %>
+		<br/>
+	<% end %>
+<% end %>
+</div>

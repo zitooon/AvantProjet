@@ -1,0 +1,13 @@
+<h1>Listing clients</h1>
+<hr/>
+<% for category in @categories %>
+	<div id="<%= category.id.to_s %>" style="background-color:#bbbbbb;"><%= link_to_function '+ '+category.name, 'Effect.SlideDown("liste'+category.id.to_s+'");Effect.SlideUp("'+category.id.to_s+'")' %></div>
+  	<div id="liste<%= category.id.to_s %>" style="display:none;">
+  		<p style="background-color:#dddddd;"><%= link_to_function '- '+category.name, 'Effect.SlideUp("liste'+category.id.to_s+'");Effect.SlideDown("'+category.id.to_s+'")' %></p>
+		<% @cat = category.name %>
+		<%= render :partial => "list" %>
+	</div>
+<%end%>
+<br />
+
+<%= link_to 'New client', new_client_path %>

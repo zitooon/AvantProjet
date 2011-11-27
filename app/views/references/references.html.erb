@@ -1,0 +1,14 @@
+<% @dates = '' %>
+<div id="references-bar">
+	-&nbsp;
+	<% for reference in @references %>
+		<% if @dates != reference.date %>
+			<% @dates = reference.date %>
+    		<%= link_to @dates, :action => 'index', :date => @dates %>&nbsp;-&nbsp;
+		<% end %>
+	<% end %>
+</div>
+<hr/>
+<div class="display_references">
+	<%= render :partial => "display" %>
+</div>

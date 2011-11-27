@@ -1,0 +1,23 @@
+<div id="clients-bar">
+	<%= link_to_function 'Villes', 'document.getElementById("communes-etat").style.display="none";document.getElementById("hlm-prives").style.display="none";document.getElementById("villes").style.display="block";', :class => 'link-clients-bar' %>
+	&nbsp;-&nbsp;
+	<%= link_to_function 'groupements de communes', 'document.getElementById("hlm-prives").style.display="none";document.getElementById("villes").style.display="none";document.getElementById("communes-etat").style.display="block";', :class => 'link-clients-bar' %>
+	&nbsp;-&nbsp;
+	<%= link_to_function 'services de l\'Etat et établissements publics', 'document.getElementById("hlm-prives").style.display="none";document.getElementById("villes").style.display="none";document.getElementById("communes-etat").style.display="block";', :class => 'link-clients-bar' %>
+	&nbsp;-&nbsp;
+	<%= link_to_function 'organismes HLM', 'document.getElementById("villes").style.display="none";document.getElementById("communes-etat").style.display="none";document.getElementById("hlm-prives").style.display="block";', :class => 'link-clients-bar' %>
+	&nbsp;-&nbsp;
+	<%= link_to_function 'promoteurs privés', 'document.getElementById("villes").style.display="none";document.getElementById("communes-etat").style.display="none";document.getElementById("hlm-prives").style.display="block";', :class => 'link-clients-bar' %>
+</div>
+<hr/>
+<div id="clients-content">
+	<div id="villes">
+		<%= render :partial => "villes" %>
+	</div>
+	<div id="communes-etat" style="display:none;">
+		<%= render :partial => "communes_etat" %>
+	</div>
+	<div id="hlm-prives" style="display:none;">
+		<%= render :partial => "hlm_prives" %>
+	</div>
+</div>

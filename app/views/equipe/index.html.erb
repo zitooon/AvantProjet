@@ -1,0 +1,28 @@
+<div id="team-members">
+	<br/><br/>
+	<div id="name-cv1" style="padding-top:15px;margin-bottom:15px;"><%= link_to_function 'Christophe BASTIDE', 'document.getElementById("cv2-picture").style.display="none";document.getElementById("cv3-picture").style.display="none";Effect.Appear("cv1-picture");document.getElementById("cv2").style.display="none";document.getElementById("cv3").style.display="none";Effect.Appear("cv1");', :class => 'link-team-members1' %></div>
+	<div id="name-cv2" style="padding-top:15px;margin-bottom:15px;"><%= link_to_function 'Dominique DURAND', 'document.getElementById("cv3-picture").style.display="none";document.getElementById("cv1-picture").style.display="none";Effect.Appear("cv2-picture");document.getElementById("cv3").style.display="none";document.getElementById("cv1").style.display="none";Effect.Appear("cv2");', :class => 'link-team-members2' %></div>
+	<div id="name-cv3" style="padding-top:15px;margin-bottom:15px;"><%= link_to_function 'Alexandra ESPINOSA', 'document.getElementById("cv2-picture").style.display="none";document.getElementById("cv1-picture").style.display="none";Effect.Appear("cv3-picture");document.getElementById("cv2").style.display="none";document.getElementById("cv1").style.display="none";Effect.Appear("cv3");', :class => 'link-team-members3' %></div>
+</div>
+<div id="team-picture">
+	<div id="cv1-picture" style="">
+		<%= image_tag('cv1.gif') %>
+	</div>
+	<div id="cv2-picture" style="display:none;">
+		<%= image_tag('cv2.gif') %>
+	</div>
+	<div id="cv3-picture" style="display:none;">
+		<%= image_tag('cv3.gif') %>
+	</div>	
+</div>
+<div id="team-cv">
+	<div id="cv1" style="">
+		<%= render :partial => "cv1" %>
+	</div>
+	<div id="cv2" style="display:none;">
+		<%= render :partial => "cv2" %>
+	</div>
+	<div id="cv3" style="display:none;">
+		<%= render :partial => "cv3" %>
+	</div>	
+</div>

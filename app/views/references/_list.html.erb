@@ -1,0 +1,27 @@
+	<table>
+  <tr>
+    <th>Client</th>
+    <th>Title</th>
+    <th>Owner</th>
+    <th>Summary</th>
+  </tr>
+
+<% for reference in @references %>
+  <% if reference.date == @date %>
+  	<tr>
+    <td><%=h truncate(reference.client.name, 28) %></td>
+    <td width="297px"><%=h truncate(reference.title, 40) %></td>
+    <td><%=h reference.owner %></td>
+    <td align="center">
+    	<% if reference.summary.nil? == false %>
+			<%= link_to image_tag('download_icon_small.gif', :border => 0), reference.summary %>
+		<%end%>		
+	</td>
+    <td><%= link_to 'Show', reference %></td>
+    <td><%= link_to 'Edit', edit_reference_path(reference) %></td>
+    <td><%= link_to 'Destroy', reference, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+  <% end %>
+<% end %>
+</table>
+<hr/>
